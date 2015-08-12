@@ -1,0 +1,36 @@
+<dom-module id="ec-form">
+  
+  <template>
+    <form id="ecform" is="iron-form" method="get" action="/" class='ec-form' on-submit="handleSubmit"> 
+      <div class='ec-form__field' id='ECForm-text'> 
+        <textarea class='' name='text' id='ECFormField' placeholder='Your comment...'> </textarea> 
+      </div> 
+      <div class='ec-form__fields'> 
+        <div class='ec-form__field' id='ECForm-author'> 
+          <input class='' type='text' name='author' placeholder='Name'> 
+        </div> 
+        <div class='ec-form__field' id='ECForm-email'> 
+          <input class='' type='email' name='email' placeholder='Email'> 
+        </div> 
+        <div class=''> 
+          <input class='button' id='ECFormSubmit' type='submit' value='Submit comment'> 
+        </div> 
+      </div> 
+    </form> 
+  </template>
+
+ <script>
+  (function() {    
+
+    Polymer({
+      is: 'ec-form',
+      handleSubmit: function () {
+        var comment = this.$.ecform.serialize();
+        comment.timestamp = new Date().toString();
+        this.push('comments', comment);
+      }
+    });
+  })();
+  </script>
+
+</dom-module>
