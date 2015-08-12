@@ -27,6 +27,7 @@
       handleSubmit: function () {
         var comment = this.$.ecform.serialize();
         comment.timestamp = new Date().toString();
+        comment.children = "[]";
         this.push('comments', comment);
       }
     });

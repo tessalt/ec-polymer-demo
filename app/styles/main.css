@@ -37,7 +37,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ec-list {
-  overflow: hidden;
   background: white;
 }
 
@@ -93,7 +92,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
-  overflow: hidden;
 }
 
 .ec-comment p:last-child {

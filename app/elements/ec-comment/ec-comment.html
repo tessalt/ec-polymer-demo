@@ -5,9 +5,10 @@
         <ec-gravatar email="{{comment.email}}"></ec-gravatar>
       </div> 
       <div class='ec-comment__body'> 
-        <h4 class=''>{{comment.author}}<small><span>&nbsp;</span>{{comment.timestamp}}</small> 
-        </h4> 
+        <h4 class=''>{{comment.author}}<small><span>&nbsp;</span>{{comment.timestamp}}</small></h4> 
         <p>{{comment.text}}</p> 
+        <button on-click="reply">Reply</button>
+        <div id="replies"></div>
       </div> 
     </div>
   </template>
@@ -16,7 +17,12 @@
   (function() {    
 
     Polymer({
-      is: 'ec-comment'
+      is: 'ec-comment',
+      reply: function () {
+        var ec = document.createElement('ec-chamber');
+        ec.setAttribute('comments', this.comment.children);
+        Polymer.dom(this.$.replies).appendChild(ec);
+      }
     });
   })();
   </script>
