@@ -1,0 +1,25 @@
+<dom-module id="ec-gravatar">
+  <script src="../../bower_components/js-md5/js/md5.min.js"></script>
+
+  <template>
+    <img src="{{gravatarURL}}">
+  </template>
+
+ <script>
+  (function() {    
+    Polymer({
+      is: 'ec-gravatar',
+      properties: {      
+        gravatarURL: {
+          type: String,
+          computed: 'computeURL(email)'          
+        },
+      },
+      computeURL: function (email) {            
+        return 'https://www.gravatar.com/avatar/' + md5(email) + '?s=48';
+      }
+    });
+  })();
+  </script>
+
+</dom-module>

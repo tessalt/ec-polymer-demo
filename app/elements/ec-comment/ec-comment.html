@@ -2,7 +2,7 @@
   <template>
     <div class='ec-dom-comment'> 
       <div class='ec-comment__avatar'> 
-        <img src='https://www.gravatar.com/avatar/1441a7909c087dbbe7ce59881b9df8b9?s=48'> 
+        <ec-gravatar email="{{comment.email}}"></ec-gravatar>
       </div> 
       <div class='ec-comment__body'> 
         <h4 class=''>{{comment.author}}<small><span></span>{{comment.timestamp}}</small> 
