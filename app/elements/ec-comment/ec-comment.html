@@ -5,7 +5,10 @@
         <ec-gravatar email="{{comment.email}}"></ec-gravatar>
       </div> 
       <div class='ec-comment__body'> 
-        <h4 class=''>{{comment.author}}<small><span>&nbsp;</span>{{comment.timestamp}}</small></h4> 
+        <h4 class=''>{{comment.author}}<small>
+          <span>&nbsp;</span>
+          <ec-timestamp timestamp="{{comment.timestamp}}"></ec-timestamp></small>
+        </h4> 
         <p>{{comment.text}}</p> 
         <button on-click="reply">Reply</button>
         <div id="replies"></div>

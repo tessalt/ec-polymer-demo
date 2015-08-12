@@ -1,0 +1,25 @@
+<dom-module id="ec-timestamp">
+  <template>
+    <span>{{formattedDate}}</span>
+  </template>
+
+ <script>
+  (function() {    
+
+    Polymer({
+      is: 'ec-timestamp',
+      properties: {
+        formattedDate: {
+          type: String,
+          computed: 'computeDateString(timestamp)'
+        }
+      },
+      computeDateString: function (timestamp) {
+        var date = new Date(timestamp);
+        return date.toDateString() + ' at ' + date.getHours() + ':' + date.getMinutes();
+      }
+    });
+  })();
+  </script>
+
+</dom-module>
