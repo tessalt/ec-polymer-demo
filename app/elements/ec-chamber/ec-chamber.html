@@ -22,17 +22,9 @@
       </form> 
 
       <div class="ec-list">
-        <div class='ec-comment'> 
-          <div class='ec-comment__avatar'> 
-            <img src='https://www.gravatar.com/avatar/1441a7909c087dbbe7ce59881b9df8b9?s=48'> 
-          </div> 
-          <div class='ec-comment__body'> 
-            <h4 class=''>Tessa Thornton  
-              <small> on Tuesday at 3:15 </small> 
-            </h4> 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates possimus sed amet laudantium vero non sit nesciunt eos beatae accusantium magnam at maiores harum et, quo magni vitae. Harum, sunt.</p> 
-          </div> 
-        </div>
+        <template is="dom-repeat" items="{{comments}}">
+          <ec-comment comment="{{item}}"></ec-comment>
+        </template>
       </div>
 
     </div>
